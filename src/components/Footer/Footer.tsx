@@ -9,6 +9,7 @@ import {
   FaTwitterSquare as Twitter,
   FaInstagram as Instagram,
   FaLinkedin as Linkedin,
+  FaGithub as Github,
 } from "react-icons/fa"
 
 const Footer = () => {
@@ -98,6 +99,17 @@ const Footer = () => {
                   </a>
                 </li>
               )}
+              {siteMeta.developerUrl && (
+                <li>
+                  <a
+                    href={siteMeta.developerUrl}
+                    target="_blank"
+                    rel="nofollow noreferrer noopener"
+                  >
+                    <Github />
+                  </a>
+                </li>
+              )}
               {siteMeta.linkedinUsername && (
                 <li>
                   <a
@@ -116,19 +128,19 @@ const Footer = () => {
         )}
       </div>
       <CopyrightStyles>
-        <div className="container container__tight">
-          <p>
-            Designed & developed by{" "}
-            <a
-              href={siteMeta.developerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {siteMeta.developerName}
-            </a>
-            <span>.</span>
-          </p>
-        </div>
+        {/*<div className="container container__tight">*/}
+        {/*  <p>*/}
+        {/*    Designed & developed by{" "}*/}
+        {/*    <a*/}
+        {/*      href={siteMeta.developerUrl}*/}
+        {/*      target="_blank"*/}
+        {/*      rel="noopener noreferrer"*/}
+        {/*    >*/}
+        {/*      {siteMeta.developerName}*/}
+        {/*    </a>*/}
+        {/*    <span>.</span>*/}
+        {/*  </p>*/}
+        {/*</div>*/}
       </CopyrightStyles>
     </FooterStyles>
   )

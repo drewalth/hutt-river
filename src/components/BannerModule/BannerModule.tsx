@@ -19,8 +19,8 @@ const BannerModule = ({
   price,
   enquire,
 }: BannerModuleProps) => {
-  function scrollToArea() {
-    navigate("#topContent")
+  const scrollToArea = async () => {
+    await navigate("#topContent")
   }
 
   return (
@@ -32,7 +32,7 @@ const BannerModule = ({
           <StaticImage
             className="banner__image"
             imgClassName="banner__image--content"
-            src="../../../static/macbook-color.jpg"
+            src="../../../static/john-huisjen-cover.jpeg"
             alt="Banner Image"
             layout="fullWidth"
             placeholder="blurred"

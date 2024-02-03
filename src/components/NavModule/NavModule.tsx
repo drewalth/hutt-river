@@ -42,7 +42,7 @@ const NavModule = () => {
       <div className="nav">
         <div className="container">
           <HamburgerStyles
-            initial="closed"
+            initial={"open"}
             animate={isOpen ? "open" : "closed"}
             onClick={toggleNav}
             onKeyDown={toggleNav}

@@ -10,7 +10,7 @@ const config: GatsbyConfig = {
     instagramUsername: "huttrivernz",
     image: "/macbook-color.jpg",
     developerName: "Drew Althage",
-    developerUrl: "https://drewalth.com",
+    developerUrl: "https://github.com/drewalth/hutt-river",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

@@ -3,8 +3,8 @@ import Seo from "../components/SEO"
 import Layout from "../components/Layout"
 import BannerModule from "../components/BannerModule/BannerModule"
 import BasicTextModule from "../components/BasicTextModule/BasicTextModule"
+import GageModule from "../components/GageModule/GageModule"
 import PerksModule from "../components/PerksModule/PerksModule"
-import Perk from "../components/PerksModule/Perk"
 
 const Index = () => {
   return (
@@ -13,20 +13,16 @@ const Index = () => {
       <Layout>
         <BannerModule
           title="Welcome to the Hutt River"
-          subTitle="Using a combination of Gatsby and Contentful, Barcadia is ready to deploy and simple to use."
+          subTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
         />
+        <GageModule />
+        <PerksModule />
         <BasicTextModule
-          title="A super-fast theme that is easy to get started, using the power of
-            GatsbyJS"
-          content="Using modern CSS properties such as grid, this theme is optmised for
-            speed and mobile devices. Giving users an excellent experience on
-            any device. Future-proofing your product."
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           link="/products"
-          linkText="View Products"
+          linkText="View Events"
         />
-        <PerksModule>
-          {/* <Perk title="The Title" content="The content" /> */}
-        </PerksModule>
       </Layout>
     </>
   )
