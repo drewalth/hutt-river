@@ -36,7 +36,7 @@ const config: GatsbyConfig = {
       },
       __key: "images",
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
   ],
 }
 

@@ -20,7 +20,7 @@ const Index = () => {
         <BasicTextModule
           title="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
           content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          link="/products"
+          link="/events"
           linkText="View Events"
         />
       </Layout>
