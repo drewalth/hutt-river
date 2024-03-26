@@ -10,6 +10,7 @@ const useAllEvents = () => {
           title
           gatsbyPath(filePath: "/events/{contentfulEvent.slug}")
           createdAt(formatString: "DD MMMM, YYYY")
+          shortDescription
         }
       }
     }
