@@ -13,7 +13,7 @@
   "license": "See license in https://www.creative-tim.com/license",
   "author": "Creative Tim",
   "scripts": {
-    "build": "react-scripts build",
+    "build": "export CI=false && react-scripts build",
     "eject": "react-scripts eject",
     "lint": "eslint ./src",
     "prettify": "prettier --write .",
