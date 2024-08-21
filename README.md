@@ -2,6 +2,8 @@
 
 The code that powers [huttriver.co.nz](https://huttriver.co.nz/).
 
+[![build](https://github.com/drewalth/hutt-river/actions/workflows/build.yml/badge.svg)](https://github.com/drewalth/hutt-river/actions/workflows/build.yml) [![Netlify Status](https://api.netlify.com/api/v1/badges/6bbe70d2-4338-4342-bc5b-25e93108c500/deploy-status)](https://app.netlify.com/sites/soft-bonbon-e42155/deploys)
+
 ## Development
 
 ### Overview
