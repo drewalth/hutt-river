@@ -16,5 +16,11 @@ jobs:
          with:
            node-version: '20'
        - run: npm ci
-       - run: make preflight
+         name: Install dependencies
+       - run: npm run lint
+         name: Lint
+       - run: npm run pretty:check
+         name: Check code formatting
+       - run: npm run build
+         name: Build
 
