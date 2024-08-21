@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
-import Divider from '@mui/material/Divider'
+// import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
 import MenuItem from '@mui/material/MenuItem'
 import Drawer from '@mui/material/Drawer'
@@ -97,48 +97,48 @@ function AppAppBar() {
               {/*  style={logoStyle}*/}
               {/*  alt="logo of sitemark"*/}
               {/*/>*/}
-              <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                <MenuItem
-                  onClick={() => scrollToSection('features')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Events
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('testimonials')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Schedule
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('highlights')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    Highlights
-                  </Typography>
-                </MenuItem>
-                {/*<MenuItem*/}
-                {/*  onClick={() => scrollToSection('pricing')}*/}
-                {/*  sx={{ py: '6px', px: '12px' }}*/}
-                {/*>*/}
-                {/*  <Typography variant="body2" color="text.primary">*/}
-                {/*    Pricing*/}
-                {/*  </Typography>*/}
-                {/*</MenuItem>*/}
-                <MenuItem
-                  onClick={() => scrollToSection('faq')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography variant="body2" color="text.primary">
-                    FAQ
-                  </Typography>
-                </MenuItem>
-              </Box>
+              {/*<Box sx={{ display: { xs: 'none', md: 'flex' } }}>*/}
+              {/*<MenuItem*/}
+              {/*  onClick={() => scrollToSection('features')}*/}
+              {/*  sx={{ py: '6px', px: '12px' }}*/}
+              {/*>*/}
+              {/*  <Typography variant="body2" color="text.primary">*/}
+              {/*    Events*/}
+              {/*  </Typography>*/}
+              {/*</MenuItem>*/}
+              {/*<MenuItem*/}
+              {/*  onClick={() => scrollToSection('testimonials')}*/}
+              {/*  sx={{ py: '6px', px: '12px' }}*/}
+              {/*>*/}
+              {/*  <Typography variant="body2" color="text.primary">*/}
+              {/*    Schedule*/}
+              {/*  </Typography>*/}
+              {/*</MenuItem>*/}
+              {/*<MenuItem*/}
+              {/*  onClick={() => scrollToSection('highlights')}*/}
+              {/*  sx={{ py: '6px', px: '12px' }}*/}
+              {/*>*/}
+              {/*  <Typography variant="body2" color="text.primary">*/}
+              {/*    Highlights*/}
+              {/*  </Typography>*/}
+              {/*</MenuItem>*/}
+              {/*<MenuItem*/}
+              {/*  onClick={() => scrollToSection('pricing')}*/}
+              {/*  sx={{ py: '6px', px: '12px' }}*/}
+              {/*>*/}
+              {/*  <Typography variant="body2" color="text.primary">*/}
+              {/*    Pricing*/}
+              {/*  </Typography>*/}
+              {/*</MenuItem>*/}
+              {/*<MenuItem*/}
+              {/*  onClick={() => scrollToSection('faq')}*/}
+              {/*  sx={{ py: '6px', px: '12px' }}*/}
+              {/*>*/}
+              {/*  <Typography variant="body2" color="text.primary">*/}
+              {/*    FAQ*/}
+              {/*  </Typography>*/}
+              {/*</MenuItem>*/}
+              {/*</Box>*/}
             </Box>
             <Box
               sx={{
@@ -201,22 +201,22 @@ function AppAppBar() {
                       toggleColorMode={toggleColorMode}
                     />
                   </Box>
-                  <MenuItem onClick={() => scrollToSection('features')}>
-                    Features
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('testimonials')}>
-                    Testimonials
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('highlights')}>
-                    Highlights
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('pricing')}>
-                    Pricing
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('faq')}>
-                    FAQ
-                  </MenuItem>
-                  <Divider />
+                  {/*<MenuItem onClick={() => scrollToSection('features')}>*/}
+                  {/*  Features*/}
+                  {/*</MenuItem>*/}
+                  {/*<MenuItem onClick={() => scrollToSection('testimonials')}>*/}
+                  {/*  Testimonials*/}
+                  {/*</MenuItem>*/}
+                  {/*<MenuItem onClick={() => scrollToSection('highlights')}>*/}
+                  {/*  Highlights*/}
+                  {/*</MenuItem>*/}
+                  {/*<MenuItem onClick={() => scrollToSection('pricing')}>*/}
+                  {/*  Pricing*/}
+                  {/*</MenuItem>*/}
+                  {/*<MenuItem onClick={() => scrollToSection('faq')}>*/}
+                  {/*  FAQ*/}
+                  {/*</MenuItem>*/}
+                  {/*<Divider />*/}
                   <MenuItem>
                     <Button
                       color="primary"
