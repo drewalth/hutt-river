@@ -9,7 +9,8 @@
     "lint": "eslint src",
     "preview": "vite preview",
     "scrape": "tsx scrape.ts",
-    "pretty": "prettier ./src/ --config prettier.config.cjs -w"
+    "pretty:write": "prettier ./src/ --config prettier.config.cjs -w",
+    "pretty:check": "prettier ./src/ --config prettier.config.cjs -c"
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",
