@@ -49,11 +49,7 @@ const items = [
   },
 ]
 
-
 export default function Highlights() {
-
-
-
   return (
     <Box
       id="highlights"
@@ -73,7 +69,6 @@ export default function Highlights() {
           gap: { xs: 3, sm: 6 },
         }}
       >
-
         <Grid container spacing={2.5}>
           {items.map((item, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>

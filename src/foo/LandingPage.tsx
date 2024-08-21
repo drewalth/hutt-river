@@ -17,8 +17,8 @@ import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import getLPTheme from './getLPTheme'
 import { useState } from 'react'
-import GaugeCharts from "./components/GaugeCharts.tsx"
-import Description from "./components/Description.tsx"
+import GaugeCharts from './components/GaugeCharts.tsx'
+import Description from './components/Description.tsx'
 
 // interface ToggleCustomThemeProps {
 //   showCustomTheme: boolean

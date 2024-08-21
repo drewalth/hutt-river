@@ -17,8 +17,8 @@ import Typography from '@mui/material/Typography'
 
 const items = [
   `<iframe id="widget-iframe" width="360px" height="640px" src="https://flowrate.co.nz/river/hutt-river/kaitoke/widget" allowtransparency="true" style="border:none"></iframe>`,
-      `<iframe id="widget-iframe" width="360px" height="640px" src="https://flowrate.co.nz/river/hutt-river/birchville/widget" allowtransparency="true" style="border:none"></iframe>`,
-  `<iframe id="widget-iframe" width="360px" height="640px" src="https://flowrate.co.nz/river/hutt-river/taita-gorge/widget" allowtransparency="true" style="border:none"></iframe>`
+  `<iframe id="widget-iframe" width="360px" height="640px" src="https://flowrate.co.nz/river/hutt-river/birchville/widget" allowtransparency="true" style="border:none"></iframe>`,
+  `<iframe id="widget-iframe" width="360px" height="640px" src="https://flowrate.co.nz/river/hutt-river/taita-gorge/widget" allowtransparency="true" style="border:none"></iframe>`,
 ]
 
 export default function GaugeCharts() {
@@ -50,9 +50,6 @@ export default function GaugeCharts() {
           <Typography component="h2" variant="h4">
             Gauges
           </Typography>
-          <Typography variant="body1" sx={{ color: 'grey.400' }}>
-            Provided by flowrate.co.nz
-          </Typography>
         </Box>
         <Grid container spacing={2.5}>
           {items.map((item, index) => (
@@ -70,14 +67,33 @@ export default function GaugeCharts() {
                   borderColor: 'grey.800',
                   background: 'transparent',
                   backgroundColor: 'grey.900',
-                  maxHeight: "500px"
+                  maxHeight: '455px',
                 }}
               >
-                <div dangerouslySetInnerHTML={{ __html: item}} />
+                <div dangerouslySetInnerHTML={{ __html: item }} />
               </Stack>
             </Grid>
           ))}
         </Grid>
+        <Box
+          sx={{
+            width: { sm: '100%', md: '60%' },
+            textAlign: { sm: 'left', md: 'center' },
+          }}
+        >
+          <Typography variant="caption" sx={{ color: 'grey.400' }}>
+            Provided by{' '}
+            <a
+              style={{
+                color: 'white',
+              }}
+              href={'https://flowrate.co.nz/'}
+              target={'_blank'}
+            >
+              flowrate.co.nz
+            </a>
+          </Typography>
+        </Box>
       </Container>
     </Box>
   )
