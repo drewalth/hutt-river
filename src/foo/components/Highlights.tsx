@@ -10,7 +10,6 @@ import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded'
 import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRounded'
 import SupportAgentRoundedIcon from '@mui/icons-material/SupportAgentRounded'
 import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded'
-
 const items = [
   {
     icon: <SettingsSuggestRoundedIcon />,
@@ -50,7 +49,11 @@ const items = [
   },
 ]
 
+
 export default function Highlights() {
+
+
+
   return (
     <Box
       id="highlights"
@@ -70,21 +73,7 @@ export default function Highlights() {
           gap: { xs: 3, sm: 6 },
         }}
       >
-        <Box
-          sx={{
-            width: { sm: '100%', md: '60%' },
-            textAlign: { sm: 'left', md: 'center' },
-          }}
-        >
-          <Typography component="h2" variant="h4">
-            Highlights
-          </Typography>
-          <Typography variant="body1" sx={{ color: 'grey.400' }}>
-            Explore why our product stands out: adaptability, durability,
-            user-friendly design, and innovation. Enjoy reliable customer
-            support and precision in every detail.
-          </Typography>
-        </Box>
+
         <Grid container spacing={2.5}>
           {items.map((item, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>

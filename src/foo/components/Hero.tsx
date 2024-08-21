@@ -30,13 +30,14 @@ export default function Hero() {
       >
         <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
           <Typography
-            variant="h1"
+            variant="h3"
             sx={{
               display: 'flex',
               flexDirection: 'column',
               alignSelf: 'center',
               textAlign: 'center',
-              fontSize: 'clamp(3.5rem, 10vw, 4rem)',
+              fontWeight: 400,
+              // fontSize: 'clamp(3.5rem, 10vw, 4rem)',
             }}
           >
             Hutt River

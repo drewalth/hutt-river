@@ -11,12 +11,14 @@ import Hero from './components/Hero'
 import LogoCollection from './components/LogoCollection'
 import Highlights from './components/Highlights'
 // import Pricing from './components/Pricing'
-import Features from './components/Features'
+// import Features from './components/Features'
 // import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import getLPTheme from './getLPTheme'
 import { useState } from 'react'
+import GaugeCharts from "./components/GaugeCharts.tsx"
+import Description from "./components/Description.tsx"
 
 // interface ToggleCustomThemeProps {
 //   showCustomTheme: boolean
@@ -76,14 +78,19 @@ export default function LandingPage() {
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
       <Hero />
       <Box sx={{ bgcolor: 'background.default' }}>
-        <Highlights />
+        <Description />
         <Divider />
-        <Features />
+        <GaugeCharts />
+        <Divider />
+
+        <Highlights />
         <Divider />
         {/*<Pricing />*/}
         <Divider />
 
         <LogoCollection />
+        <Divider />
+
         <Divider />
         <FAQ />
         <Divider />
