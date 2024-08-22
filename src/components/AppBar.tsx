@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box'
-import AppBar from '@mui/material/AppBar'
+import BaseAppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
@@ -54,7 +54,7 @@ function AppAppBar() {
 
   return (
     <div>
-      <AppBar
+      <BaseAppBar
         position="fixed"
         sx={{
           boxShadow: 0,
@@ -288,7 +288,7 @@ function AppAppBar() {
             </Box>
           </Toolbar>
         </Container>
-      </AppBar>
+      </BaseAppBar>
     </div>
   )
 }
