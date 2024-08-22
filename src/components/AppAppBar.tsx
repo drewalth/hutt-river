@@ -9,13 +9,17 @@ import MenuItem from '@mui/material/MenuItem'
 import Drawer from '@mui/material/Drawer'
 import MenuIcon from '@mui/icons-material/Menu'
 import ToggleColorMode from './ToggleColorMode.tsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useThemeContext } from '../context/ThemeProvider.tsx'
+import { Constants } from '../constants.ts'
+import { useMediaQuery } from '@mui/material'
+import { useTheme } from '@mui/system'
 
 function AppAppBar() {
   const { mode, toggleColorMode } = useThemeContext()
   const [open, setOpen] = useState(false)
-
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.up('md'))
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen)
   }
@@ -33,6 +37,20 @@ function AppAppBar() {
       setOpen(false)
     }
   }
+
+  const handleResize = () => {
+    if (matches && open) {
+      setOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <div>
@@ -223,12 +241,34 @@ function AppAppBar() {
                       variant="contained"
                       component="a"
                       target={'_blank'}
-                      href={
-                        'https://huttvalleycanoeclub.org.nz/hutt-gorge-race/'
-                      }
+                      href={Constants.registrationURL}
                       sx={{ width: '100%' }}
                     >
                       Register
+                    </Button>
+                  </MenuItem>
+                  <MenuItem>
+                    <Button
+                      color="secondary"
+                      variant="outlined"
+                      component="a"
+                      target={'_blank'}
+                      href={Constants.facebookPageURL}
+                      sx={{ width: '100%' }}
+                    >
+                      Facebook
+                    </Button>
+                  </MenuItem>
+                  <MenuItem>
+                    <Button
+                      color="secondary"
+                      variant="outlined"
+                      component="a"
+                      target={'_blank'}
+                      href={Constants.githubURL}
+                      sx={{ width: '100%' }}
+                    >
+                      GitHub
                     </Button>
                   </MenuItem>
                   {/*<MenuItem>*/}

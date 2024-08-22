@@ -9,6 +9,7 @@ import Stack from '@mui/material/Stack'
 
 import GithubIcon from '@mui/icons-material/GitHub'
 import FacebookIcon from '@mui/icons-material/Facebook'
+import { Constants } from '../constants.ts'
 
 // const logoStyle = {
 //   width: '140px',
@@ -193,7 +194,7 @@ export default function Footer() {
         >
           <IconButton
             color="inherit"
-            href="https://github.com/drewalth/hutt-river"
+            href={Constants.githubURL}
             aria-label="GitHub"
             sx={{ alignSelf: 'center' }}
           >
@@ -201,8 +202,8 @@ export default function Footer() {
           </IconButton>
           <IconButton
             color="inherit"
-            href="https://www.facebook.com/events/431403149660388/?rdid=3H3dzw7pRKoy2e5M"
-            aria-label="LinkedIn"
+            href={Constants.facebookPageURL}
+            aria-label="Facebook"
             sx={{ alignSelf: 'center' }}
           >
             <FacebookIcon />

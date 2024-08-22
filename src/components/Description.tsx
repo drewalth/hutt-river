@@ -30,9 +30,18 @@ export default function Description() {
           }}
         >
           <Typography component="h2" variant="h4">
-            {`${eventData.formattedDate} @ ${eventData.location?.name || 'TBA'}`}
+            {`${eventData.formattedDate}`}
           </Typography>
-          <Typography variant="body1" sx={{ color: 'grey.400' }}>
+          <Typography
+            component="h2"
+            variant="h4"
+            sx={{
+              mb: 3,
+            }}
+          >
+            {`@ ${eventData.location?.name || 'TBA'}`}
+          </Typography>
+          <Typography variant="body1" sx={{ color: 'grey.300' }}>
             {eventData.description}
           </Typography>
         </Box>
