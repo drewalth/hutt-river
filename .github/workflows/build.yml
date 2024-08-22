@@ -21,5 +21,7 @@ jobs:
         name: Lint
       - run: npm run pretty:check
         name: Check code formatting
+      - run: npm run test
+        name: Test
       - run: npm run build
         name: Build
