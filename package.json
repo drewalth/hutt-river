@@ -9,8 +9,9 @@
     "lint": "eslint src",
     "preview": "vite preview",
     "scrape": "tsx scrape.ts",
-    "pretty:write": "prettier ./src/ --config prettier.config.cjs -w",
-    "pretty:check": "prettier ./src/ --config prettier.config.cjs -c"
+    "pretty:write": "prettier ./ --config prettier.config.cjs -w",
+    "pretty:check": "prettier ./ --config prettier.config.cjs -c",
+    "test": "vitest run"
   },
   "dependencies": {
     "@emotion/react": "^11.13.0",
@@ -40,7 +41,8 @@
     "tsx": "^4.17.0",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vitest": "^2.0.5"
   },
   "engines": {
     "node": "20.15.1",

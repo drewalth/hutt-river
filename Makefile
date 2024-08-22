@@ -29,6 +29,7 @@ nvm_lts: install_homebrew install_nvm
 preflight:
 	npm run lint && \
 	npm run pretty:check && \
+	npm run test && \
 	npm run build && \
 	$(MAKE) check_leaks && \
 	echo "Preflight checks passed"

@@ -1,26 +1,25 @@
 name: build
 on:
-    push:
-        branches:
-        - main
-    pull_request:
-        branches:
-        - main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-   build:
-     runs-on: ubuntu-latest
-     steps:
-       - uses: actions/checkout@v3
-       - uses: actions/setup-node@v2
-         with:
-           node-version: '20'
-       - run: npm ci
-         name: Install dependencies
-       - run: npm run lint
-         name: Lint
-       - run: npm run pretty:check
-         name: Check code formatting
-       - run: npm run build
-         name: Build
-
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+      - run: npm ci
+        name: Install dependencies
+      - run: npm run lint
+        name: Lint
+      - run: npm run pretty:check
+        name: Check code formatting
+      - run: npm run build
+        name: Build
