@@ -2,8 +2,12 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import eventData from '../event-data/eventData.ts'
+import { useMediaQuery } from '@mui/material'
+import { useTheme } from '@mui/system'
 
-export default function Description() {
+const Description = () => {
+  const theme = useTheme()
+  const largerScreen = useMediaQuery(theme.breakpoints.up('md'))
   return (
     <Box
       id="highlights"
@@ -25,23 +29,26 @@ export default function Description() {
       >
         <Box
           sx={{
-            width: { sm: '100%', md: '60%' },
+            width: { xs: '90%', sm: '100%', md: '60%' },
             textAlign: { sm: 'left', md: 'center' },
           }}
         >
-          <Typography component="h2" variant="h4">
+          <Typography component="h2" variant={largerScreen ? 'h4' : 'h5'}>
             {`${eventData.formattedDate}`}
           </Typography>
           <Typography
             component="h2"
-            variant="h4"
+            variant={largerScreen ? 'h4' : 'h5'}
             sx={{
               mb: 3,
             }}
           >
             {`@ ${eventData.location?.name || 'TBA'}`}
           </Typography>
-          <Typography variant="body1" sx={{ color: 'grey.300' }}>
+          <Typography
+            variant="body1"
+            sx={{ color: 'grey.300', overflowWrap: 'anywhere' }}
+          >
             {eventData.description}
           </Typography>
         </Box>
@@ -49,3 +56,5 @@ export default function Description() {
     </Box>
   )
 }
+
+export default Description
