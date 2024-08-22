@@ -1,7 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline'
 import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider'
-import AppAppBar from './components/AppAppBar.tsx'
+import AppBar from './components/AppBar.tsx'
 import Hero from './components/Hero.tsx'
 // import LogoCollection from './components/LogoCollection.tsx'
 // import Highlights from './components/Highlights.tsx'
@@ -14,7 +14,7 @@ const App = () => {
   return (
     <>
       <CssBaseline />
-      <AppAppBar />
+      <AppBar />
       <Hero />
       <Box sx={{ bgcolor: 'background.default' }}>
         <Description />

@@ -15,7 +15,7 @@ import { Constants } from '../constants.ts'
 import { useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/system'
 
-function AppAppBar() {
+const AppBar = () => {
   const { mode, toggleColorMode } = useThemeContext()
   const [open, setOpen] = useState(false)
   const theme = useTheme()
@@ -293,4 +293,4 @@ function AppAppBar() {
   )
 }
 
-export default AppAppBar
+export default AppBar

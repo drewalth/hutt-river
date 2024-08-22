@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import eventData from '../event-data/eventData.ts'
 
-export default function Hero() {
+const Hero = () => {
   return (
     <Box
       id="hero"
@@ -107,3 +107,5 @@ export default function Hero() {
     </Box>
   )
 }
+
+export default Hero
