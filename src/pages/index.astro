@@ -1,0 +1,288 @@
+---
+import { Image } from "astro:assets"
+import { ArrowDownIcon, ArrowUpRightIcon } from "lucide-react"
+import Layout from "@/layouts/main.astro"
+import { Badge } from "@/components/ui/badge"
+import { buttonVariants } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import hero from "@/assets/hero.jpeg"
+
+const links = {
+  gorgeRace: "https://huttvalleycanoeclub.org.nz/hutt-gorge-race/",
+  facebook: "https://www.facebook.com/events/431403149660388/",
+  flowrate: "https://flowrate.co.nz/",
+  github: "https://github.com/drewalth/hutt-river",
+}
+
+// Listed in the order the water reaches them.
+const stations = [
+  {
+    name: "Kaitoke",
+    label: "Gauge",
+    gauge: "kaitoke",
+    text: "Measured at the Kaitoke weir, above everything you'd paddle. This is the first read on what's coming down out of the Tararua Range.",
+  },
+  {
+    name: "Weir to Flume Bridge",
+    label: "Section",
+    grade: "Grade 2",
+    text: "The gentler stretch inside Kaitoke Regional Park, from the parking area below the weir to the steps before the flume bridge. A good place to build skills, and home of the festival's Grade 2 race.",
+  },
+  {
+    name: "Kaitoke Gorge",
+    label: "Section",
+    grade: "Grade 3",
+    text: "The classic Hutt run. Boulder-garden rapids in a steep gorge lined with native bush. Paddle it with someone who knows the lines, and check the flows first.",
+  },
+  {
+    name: "Birchville",
+    label: "Gauge",
+    gauge: "birchville",
+    text: "Below the gorge, where the river reaches Upper Hutt.",
+  },
+  {
+    name: "Taitā Gorge",
+    label: "Gauge",
+    gauge: "taita-gorge",
+    text: "Lower down the valley, on the way to the sea.",
+  },
+]
+
+const hosts = [
+  "Hutt Valley Canoe Club",
+  "Victoria University Canoe Club",
+  "Tararua Packrafters",
+  "Paddle Power",
+  "Wellington Rafting Company",
+]
+---
+
+<Layout>
+  <header
+    class="pool relative isolate flex min-h-[88svh] items-end overflow-hidden text-foreground"
+  >
+    <Image
+      src={hero}
+      alt="A kayaker, seen from above, paddling through white water"
+      widths={[640, 1280, 1920, 2560]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 -z-20 size-full object-cover"
+    />
+    <div
+      class="absolute inset-0 -z-10 bg-linear-to-t from-background via-background/50 to-transparent md:bg-linear-to-r md:via-background/55 md:to-transparent"
+    >
+    </div>
+    <div class="mx-auto w-full max-w-6xl px-4 pt-32 pb-12 md:px-8 md:pb-20">
+      <p
+        class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
+      >
+        41.07° S, 175.20° E · Kaitoke Regional Park
+      </p>
+      <h1
+        class="mt-4 font-heading text-[clamp(4rem,15vw,10rem)] leading-[0.82] font-extrabold tracking-tight text-foreground uppercase"
+      >
+        Te Awa<br />Kairangi
+      </h1>
+      <p
+        class="mt-3 font-heading text-[clamp(1.75rem,5vw,3rem)] leading-none font-medium tracking-wide text-foreground/80 uppercase"
+      >
+        Hutt River
+      </p>
+      <p class="mt-6 max-w-md text-lg text-pretty text-foreground/90">
+        Whitewater from the Kaitoke Gorge down to Taitā. Check the flows, pick
+        your section, and meet the people who paddle it.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#river" class={buttonVariants({ size: "lg" })}>
+          Check river flows
+          <ArrowDownIcon data-icon="inline-end" />
+        </a>
+        <a
+          href="#festival"
+          class={buttonVariants({
+            variant: "outline",
+            size: "lg",
+            className: "border-foreground/40 bg-transparent",
+          })}
+        >
+          About the festival
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section
+      id="river"
+      class="mx-auto max-w-6xl scroll-mt-8 px-4 py-20 md:px-8 md:py-28"
+    >
+      <div class="max-w-2xl pl-12 md:pl-20">
+        <h2
+          class="font-heading text-5xl leading-none font-bold tracking-tight uppercase md:text-6xl"
+        >
+          Top to bottom
+        </h2>
+        <p class="mt-4 text-pretty text-muted-foreground">
+          Gauges and sections in the order the water reaches them. Flows are
+          live from{" "}
+          <a
+            href={links.flowrate}
+            class="text-primary underline underline-offset-4">flowrate.co.nz</a
+          >.
+        </p>
+      </div>
+
+      <div class="relative mt-14">
+        <div
+          class="river absolute inset-y-0 left-0 w-8 md:left-2"
+          aria-hidden="true"
+        >
+        </div>
+        <ol class="flex flex-col gap-16 md:gap-20">
+          <li class="relative pl-12 md:pl-20">
+            <p
+              class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
+            >
+              Source · Tararua Range
+            </p>
+          </li>
+          {
+            stations.map((s) => (
+              <li class="relative grid gap-6 pl-12 md:grid-cols-[1fr_360px] md:gap-10 md:pl-20">
+                <span
+                  aria-hidden="true"
+                  class:list={[
+                    "absolute top-1 left-1 size-6 rounded-full border-[3px] md:left-3",
+                    s.gauge
+                      ? "border-foreground bg-pin"
+                      : "border-primary bg-background",
+                  ]}
+                />
+                <div class="max-w-xl">
+                  <p class="flex items-center gap-3 font-mono text-xs tracking-widest text-muted-foreground uppercase">
+                    {s.label}
+                    {s.grade && <Badge>{s.grade}</Badge>}
+                  </p>
+                  <h3 class="mt-2 font-heading text-4xl leading-none font-bold tracking-tight uppercase md:text-5xl">
+                    {s.name}
+                  </h3>
+                  <p class="mt-4 text-pretty text-muted-foreground">{s.text}</p>
+                </div>
+                {s.gauge && (
+                  <Card className="w-full max-w-[360px] p-0">
+                    <iframe
+                      src={`https://flowrate.co.nz/river/hutt-river/${s.gauge}/widget`}
+                      title={`Live river flow at ${s.name}`}
+                      loading="lazy"
+                      class="h-64 w-full border-0"
+                    />
+                  </Card>
+                )}
+              </li>
+            ))
+          }
+          <li class="relative pl-12 md:pl-20">
+            <p
+              class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
+            >
+              Mouth · Te Whanganui-a-Tara, Wellington Harbour
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="festival" class="pool bg-background text-foreground">
+      <div
+        class="mx-auto grid max-w-6xl gap-12 px-4 py-20 md:grid-cols-[3fr_2fr] md:px-8 md:py-28"
+      >
+        <div>
+          <p
+            class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
+          >
+            Kaitoke Regional Park
+          </p>
+          <h2
+            class="mt-4 font-heading text-5xl leading-none font-bold tracking-tight uppercase md:text-7xl"
+          >
+            The Hutt River Whitewater Festival
+          </h2>
+          <div
+            class="mt-8 flex max-w-xl flex-col gap-4 text-pretty text-muted-foreground"
+          >
+            <p>
+              A weekend when Wellington's paddling clubs take over Kaitoke
+              Regional Park for racing, social runs down the gorge, packraft
+              skills sessions, a barbecue, and camping by the river.
+            </p>
+            <p>
+              At the centre of it is the <span class="text-foreground"
+                >Hutt Gorge Race</span
+              >, a team race for crews of three that has been running for more
+              than half a century. Grade 2 and individual gorge races make up
+              the rest of the programme, and kayaks and packrafts are both
+              welcome.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-10 md:pt-16">
+          <div>
+            <h3
+              class="font-heading text-3xl leading-none font-bold tracking-tight uppercase"
+            >
+              When's the next one?
+            </h3>
+            <p class="mt-3 text-pretty text-muted-foreground">
+              The host clubs set the dates. Check with them for the next race
+              day.
+            </p>
+            <div class="mt-6 flex flex-col items-start gap-3">
+              <a href={links.gorgeRace} class={buttonVariants({ size: "lg" })}>
+                Hutt Gorge Race at Hutt Valley Canoe Club
+                <ArrowUpRightIcon data-icon="inline-end" />
+              </a>
+              <a
+                href={links.facebook}
+                class={buttonVariants({ variant: "link", className: "px-0" })}
+              >
+                Festival on Facebook
+                <ArrowUpRightIcon data-icon="inline-end" />
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3
+              class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
+            >
+              Brought to you by
+            </h3>
+            <ul class="mt-3 flex flex-wrap gap-2">
+              {
+                hosts.map((h) => (
+                  <li>
+                    <Badge variant="outline">{h}</Badge>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer
+    class="mx-auto flex max-w-6xl flex-wrap justify-between gap-4 px-4 py-10 font-mono text-xs text-muted-foreground md:px-8"
+  >
+    <p>Photo: John Huisjen · Flows: flowrate.co.nz</p>
+    <a
+      href={links.github}
+      class="underline underline-offset-4 hover:text-foreground"
+    >
+      Source on GitHub
+    </a>
+  </footer>
+</Layout>

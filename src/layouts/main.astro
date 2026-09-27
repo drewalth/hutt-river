@@ -1,0 +1,23 @@
+---
+import "@/styles/global.css"
+
+const title = "Te Awa Kairangi · Hutt River whitewater"
+const description =
+  "Live flows, paddling sections and the whitewater festival on Te Awa Kairangi, the Hutt River, from the Kaitoke Gorge to Taitā."
+---
+
+<html lang="en-NZ">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0d3a3d" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body class="antialiased">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/big-shoulders-display";
+@import "@fontsource-variable/public-sans";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+@theme inline {
+  --font-heading: "Big Shoulders Display Variable", sans-serif;
+  --font-sans: "Public Sans Variable", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --color-pin: var(--pin);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* River stone, greywacke, gorge-water teal. Throw-bag yellow is for gauge pins only. */
+:root {
+  --background: #e7ebe6;
+  --foreground: #1d2929;
+  --card: #f3f5f1;
+  --card-foreground: #1d2929;
+  --popover: #f3f5f1;
+  --popover-foreground: #1d2929;
+  --primary: #1f6e69;
+  --primary-foreground: #f3f5f1;
+  --secondary: #d6ddd6;
+  --secondary-foreground: #1d2929;
+  --muted: #d6ddd6;
+  --muted-foreground: #4b5b59;
+  --accent: #d6ddd6;
+  --accent-foreground: #1d2929;
+  --destructive: #b3261e;
+  --border: #c3cdc5;
+  --input: #c3cdc5;
+  --ring: #1f6e69;
+  --pin: #f2c230;
+  --radius: 0.5rem;
+}
+
+/* Deep pool: a dark band scoped to one section, not a site-wide theme. */
+.pool {
+  --background: #0d3a3d;
+  --foreground: #e7ebe6;
+  --card: #134649;
+  --card-foreground: #e7ebe6;
+  --primary: #e7ebe6;
+  --primary-foreground: #0d3a3d;
+  --muted-foreground: #a9bdb9;
+  --border: #2b5a5c;
+  --input: #2b5a5c;
+  --ring: #f2c230;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply scroll-smooth font-sans;
+  }
+}
+
+/* The river rail: a meandering channel that flows downstream. */
+.river {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='160'%3E%3Cpath d='M12 0C26 40 -2 120 12 160' fill='none' stroke='%231f6e69' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E")
+    repeat-y center top / 24px 160px;
+  animation: flow 6s linear infinite;
+}
+
+@keyframes flow {
+  to {
+    background-position-y: 160px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .river {
+    animation: none;
+  }
+}
