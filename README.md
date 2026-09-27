@@ -8,22 +8,15 @@ The code that powers [huttriver.co.nz](https://huttriver.co.nz/).
 
 ### Overview
 
-This project is a super simple React app built with Vite, TypeScript and Material UI. Due to resource and time
-constraints, the project is not as polished as it could be--it could be wayyy cooler. As such, I'm open to contributions
-and suggestions!
+A static [Astro](https://astro.build) site styled with Tailwind CSS and [shadcn/ui](https://ui.shadcn.com).
+The content is deliberately date-agnostic: live river flows come from [flowrate.co.nz](https://flowrate.co.nz/)
+widgets, and festival dates are left to the host clubs, so nothing on the page goes stale between events.
 
-#### How it works
-
-We're essentially using a Facebook Event page as a headless CMS with the help of
-the [facebook-event-scraper](https://github.com/francescov1/facebook-event-scraper) module.
-
-The scraper fetches the event data from the Facebook Event page and saves it to a JSON file. The React app then reads this
-file and displays the event info.
+Content lives in `src/pages/index.astro`. Contributions and suggestions welcome!
 
 ### Prerequisites
 
-- Node.js (v20.15.1)
-- npm (v10.7.0)
+- Node.js (see `.nvmrc`)
 
 ### Getting Started
 

@@ -11,17 +11,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version-file: .nvmrc
+          cache: npm
       - run: npm ci
         name: Install dependencies
       - run: npm run lint
         name: Lint
       - run: npm run pretty:check
         name: Check code formatting
-      - run: npm run test
-        name: Test
       - run: npm run build
-        name: Build
+        name: Typecheck and build
